@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { Button } from '../../components/Button/styled';
+import { Button } from "../../components/Button/styled";
 
 export const Container = styled.div`
   display: flex;
@@ -32,6 +32,10 @@ export const MainWrapper = styled.div`
     cursor: pointer;
     &:hover {
       color: #d6d6d6;
+    }
+    > a {
+      color: #000000;
+      text-decoration: none;
     }
   }
 `;
