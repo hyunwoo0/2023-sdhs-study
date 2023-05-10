@@ -4,11 +4,12 @@ import { Button } from "../../../components/Button/styled";
 
 export const InputBox = styled.div`
   display: flex;
-  width: 100%;
+  width: 35%;
   gap: 4px;
   ${Button} {
     flex-grow: 1;
     flex-shrink: 0;
+    padding: 5px;
     border: none;
     cursor: pointer;
   }
