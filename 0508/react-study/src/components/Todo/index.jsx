@@ -8,7 +8,6 @@ function Todo(props) {
   return (
     <S.Container>
       <S.Title>{props.children}</S.Title>
-      <S.Button>중요</S.Button>
       <S.Button onClick={deleteTodo}>삭제</S.Button>
     </S.Container>
   );
