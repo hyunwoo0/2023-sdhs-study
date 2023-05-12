@@ -9,6 +9,8 @@ import ItemList from "./ItemList";
 
 import SearchInput from "../../components/SearchInput";
 
+import Button from "../../components/Button";
+
 function Todos() {
   const [todoName, setTodoName] = useState("");
   const [todos, setTodos] = useState([]);
@@ -18,6 +20,9 @@ function Todos() {
   //그래서 만들었다.
   //5.searchValue가 (4)에서 바꿔주었기 때문에 바뀐다.
   const [serchValue, setSearchValue] = useState("");
+
+  //선택한 todos들을 저장하는 state
+  const [selectTodoIds, setSelectTodoIds] = useState([]);
 
   const createTodo = () => {
     /* if(!todoName.trim()){
@@ -35,6 +40,12 @@ function Todos() {
       const tempArr = [...prevState];
       tempArr.splice(findIndex, 1);
       return tempArr;
+    });
+  };
+
+  const deleteSelectedTodos = () => {
+    setTodos((prevState) => {
+      return prevState.filter((todo) => !selectTodoIds.includes(todo.id));
     });
   };
 
@@ -72,6 +83,7 @@ function Todos() {
         createTodo={createTodo}
         onChange={setTodoName}
       />
+      <Button onClick={deleteSelectedTodos}>선택 된 To do 삭제</Button>
       {/*6. 4에서 searchValue를 바꿔 주었고, 그 값을 
       ItemList에 props로 전달해준다.
       그래서 ItemList에서 검색 input의값을 사용할 수 있게 되었다.
@@ -80,6 +92,7 @@ function Todos() {
         todos={todos}
         searchValue={serchValue}
         deleteTodo={deleteTodo}
+        setSelectTodoIds={setSelectTodoIds}
       />
     </S.Container>
   );
