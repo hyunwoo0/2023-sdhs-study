@@ -19,4 +19,5 @@ export const Input = styled.input`
   flex-shrink: 0;
   width: 100%;
   padding: 4px;
+  margin-bottom: 10px;
 `;
