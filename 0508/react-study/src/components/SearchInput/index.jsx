@@ -6,7 +6,10 @@ function SearchInput({ onChange }) {
   const [value, setValue] = useState("");
 
   const handleValue = ({ target: { value } }) => {
+    //1. input에서 입력한 값
     setValue(value);
+
+    //2. onChange라는 함수에 input에서 입력한 값을 넘겨줌
     onChange?.(value);
   };
 
